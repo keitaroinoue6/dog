@@ -18,7 +18,7 @@ const App = () => {
       <footer>
         <p>DOG images are retrieved from DOG API</p>
         <p>
-          <a href="https://dog.ceo/dog-api/about">D</a>
+          <a href="https://dog.ceo/dog-api/about">Donate to DOG API</a>
         </p>
       </footer>
     </div>
