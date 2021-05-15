@@ -30,8 +30,17 @@ const Image = (props) => { //Galleryの子コンポーネント
   );
 }
 
+const Loading = () => {
+  return(
+    <p>Loading...</p>
+  )
+}
+
 const Gallery = (props) => { //Mainの子コンポーネント  Mainからpropsを受け取る
   const { urls } = props;//URLを一旦変数に格納
+  if(urls === null) {
+    return<Loading />;
+  }
   return(
     <div className="columns is-vcentered is-multiline">
       {/* <div className="column is-3">
@@ -49,20 +58,22 @@ const Gallery = (props) => { //Mainの子コンポーネント  Mainからprops�
 }
 
 const Main = () => { //親コンポーネント
-  const urls = [ //この配列に含まれるURLそれぞれをImageコンポーネントに割り当てないといけない
-    "https://images.dog.ceo/breeds/shiba/shiba-11.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-12.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-14.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-17.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-2.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-3i.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-4.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-5.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-6.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-7.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
-    "https://images.dog.ceo/breeds/shiba/shiba-9.jpg",
-  ];
+  // const urls = [ //この配列に含まれるURLそれぞれをImageコンポーネントに割り当てないといけない
+  //   "https://images.dog.ceo/breeds/shiba/shiba-11.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-12.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-14.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-17.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-2.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-3i.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-4.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-5.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-6.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-7.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
+  //   "https://images.dog.ceo/breeds/shiba/shiba-9.jpg",
+  // ];
+
+  const urls = null;
   return(
     <main>
       <section className="section">
