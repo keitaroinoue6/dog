@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect } from "react"
+import { useEffect, useState } from "react" //コンポーネントの状態を扱うuseState
 import { fetchImages} from "./api"
 
 //コンポーネントの分割
@@ -75,10 +75,10 @@ const Main = () => { //親コンポーネント
   //   "https://images.dog.ceo/breeds/shiba/shiba-9.jpg",
   // ];
 
-  const urls = null;
+  const [ urls, setUrls ] = useState(null);
   useEffect(() => { //第一引数の関数の中でfetchImagesを呼び出しDOGAPIから取得したURLのリストをコンソールに表示
     fetchImages("shiba").then((urls) => { //Webページにアクセスした時に一回行えばいいので第二引数にはからの配列を渡す
-      console.log(urls)
+      setUrls(urls)
     })
   }, []); //からの副作用を起こした場合は、最初にコンポーネントがレンダリングされた時の一回だけ副作用が起こされます。
   return(
